@@ -52,7 +52,6 @@ struct MyWidgetEntryView : View {
             Text("Direct count:")
             Text("\(GroupUserDefaults.shared.count)")
         }
-        .containerBackground(.fill.tertiary, for: .widget)
     }
 }
 
@@ -68,9 +67,3 @@ struct MyWidget: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
-    MyWidget()
-} timeline: {
-    SimpleEntry(date: .now, count: -10)
-    SimpleEntry(date: .now, count: -10)
-}

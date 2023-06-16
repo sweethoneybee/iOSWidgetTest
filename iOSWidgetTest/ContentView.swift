@@ -31,11 +31,6 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
-
-
 final class Properties: ObservableObject {
     @Published var count: Int = GroupUserDefaults.shared.count {
         didSet {
@@ -48,7 +43,7 @@ final class GroupUserDefaults {
     private static let groupIdentifier: String = "group." + (bundleIdentifier ?? "")
     private static let bundleIdentifier: String? = {
         let id = Bundle.main.bundleIdentifier
-        if let range = id?.firstRange(of: "iOSWidgetTest") {
+        if let range = id?.range(of: "iOSWidgetTest") {
             return String(id?[..<range.upperBound] ?? "")
         }
         return nil
